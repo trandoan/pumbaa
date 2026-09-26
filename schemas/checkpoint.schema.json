@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/context-graph/checkpoint.schema.json",
+  "title": "Context Graph Checkpoint",
+  "type": "object",
+  "required": ["id", "createdAt", "createdBy", "focusEntityId", "completedSummary", "openQuestions", "nextAction"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "createdAt": { "type": "string", "format": "date-time" },
+    "createdBy": { "type": "string", "minLength": 1 },
+    "focusEntityId": { "type": "string", "minLength": 1 },
+    "activeView": { "type": "string", "enum": ["developer", "reviewer", "release", "operations"] },
+    "completedSummary": { "type": "string" },
+    "openQuestions": { "type": "array", "items": { "type": "string" } },
+    "nextAction": { "type": "string" }
+  },
+  "additionalProperties": false
+}
+

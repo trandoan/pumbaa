@@ -1,0 +1,19 @@
+{
+  "id": "engineering-change-<number>",
+  "type": "EngineeringChange",
+  "title": "<Short change title>",
+  "summary": "<Scope, intended outcome, and relevant context>",
+  "status": "proposed",
+  "owner": "<Accountable owner>",
+  "createdAt": "<ISO-8601 timestamp>",
+  "updatedAt": "<ISO-8601 timestamp>",
+  "attributes": {
+    "originEntityIds": [],
+    "acceptanceCriteria": [],
+    "affectedComponentIds": [],
+    "targetRelease": null,
+    "risk": "unknown",
+    "implementationReference": null
+  }
+}
+

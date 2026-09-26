@@ -1,0 +1,15 @@
+{
+  "id": "checkpoint-2026-09-26-change-284",
+  "createdAt": "2026-09-26T09:30:00Z",
+  "createdBy": "Jordan Davis",
+  "focusEntityId": "engineering-change-284",
+  "activeView": "reviewer",
+  "completedSummary": "Requirement and affected component are linked. Performance and regression evidence are attached. Seven of nine readiness gates are complete.",
+  "openQuestions": [
+    "Who will record the risk acceptance decision?",
+    "Has legacy client compatibility been revalidated against current code?",
+    "Who will approve the alert threshold?"
+  ],
+  "nextAction": "Review the stale compatibility evidence with the component owner, then capture human decisions for the remaining readiness gates."
+}
+

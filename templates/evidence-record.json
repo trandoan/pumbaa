@@ -1,0 +1,20 @@
+{
+  "id": "evidence-<unique-id>",
+  "assertion": "<What this evidence supports>",
+  "source": {
+    "name": "<Source title or system>",
+    "kind": "other",
+    "uri": null,
+    "revision": null
+  },
+  "capturedAt": "<ISO-8601 timestamp>",
+  "validity": {
+    "state": "unknown",
+    "validFrom": null,
+    "validUntil": null
+  },
+  "status": "unverified",
+  "confidence": "unknown",
+  "entityIds": ["<related-entity-id>"]
+}
+

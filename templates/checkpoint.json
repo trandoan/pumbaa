@@ -1,0 +1,11 @@
+{
+  "id": "checkpoint-<date>-<focus-id>",
+  "createdAt": "<ISO-8601 timestamp>",
+  "createdBy": "<Person saving the checkpoint>",
+  "focusEntityId": "<Entity to reopen>",
+  "activeView": "developer",
+  "completedSummary": "<What has been completed so far>",
+  "openQuestions": ["<Question that remains unresolved>"],
+  "nextAction": "<Concrete next action for the next work session>"
+}
+

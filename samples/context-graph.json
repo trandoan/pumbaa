@@ -1,0 +1,159 @@
+{
+  "schemaVersion": "0.1",
+  "graphId": "checkout-latency-poc",
+  "generatedAt": "2026-09-26T09:00:00Z",
+  "entities": [
+    {
+      "id": "business-change-latency",
+      "type": "BusinessChange",
+      "title": "Improve checkout completion time",
+      "summary": "Reduce customer wait time during checkout.",
+      "status": "accepted",
+      "owner": "Product Owner",
+      "createdAt": "2026-09-18T09:00:00Z",
+      "updatedAt": "2026-09-18T09:00:00Z",
+      "attributes": { "requestedOutcome": "Improve checkout conversion" }
+    },
+    {
+      "id": "requirement-checkout-p95",
+      "type": "Requirement",
+      "title": "Checkout API p95 below 500 ms",
+      "summary": "Meet the performance target without changing supported client behavior.",
+      "status": "approved",
+      "owner": "Product Owner",
+      "createdAt": "2026-09-18T10:00:00Z",
+      "updatedAt": "2026-09-19T10:00:00Z",
+      "attributes": { "acceptanceCriteria": ["p95 latency below 500 ms", "Existing supported clients remain compatible"] }
+    },
+    {
+      "id": "engineering-change-284",
+      "type": "EngineeringChange",
+      "title": "Checkout latency improvement",
+      "summary": "Optimize the order summary query and add a supporting index.",
+      "status": "in_progress",
+      "owner": "Checkout Team",
+      "createdAt": "2026-09-19T11:00:00Z",
+      "updatedAt": "2026-09-25T15:30:00Z",
+      "attributes": { "changeKey": "EC-284", "targetRelease": "v2.8.0", "risk": "medium" }
+    },
+    {
+      "id": "component-checkout-api",
+      "type": "Component",
+      "title": "Checkout API",
+      "summary": "Service boundary for checkout requests and order summaries.",
+      "status": "active",
+      "owner": "Checkout Team",
+      "createdAt": "2026-09-19T12:00:00Z",
+      "updatedAt": "2026-09-19T12:00:00Z",
+      "attributes": { "repository": "https://example.invalid/northstar/checkout-api", "authority": "Current Git repository" }
+    },
+    {
+      "id": "implementation-intent-query-index",
+      "type": "ImplementationIntent",
+      "title": "Optimize summary query and add index",
+      "summary": "Implementation reference only; current source code remains authoritative.",
+      "status": "implemented",
+      "owner": "Checkout Team",
+      "createdAt": "2026-09-20T09:00:00Z",
+      "updatedAt": "2026-09-24T13:00:00Z",
+      "attributes": { "gitReference": "feature/EC-284", "sourceCodeStoredInGraph": false }
+    },
+    {
+      "id": "verification-checkout-performance",
+      "type": "Verification",
+      "title": "Checkout performance and regression verification",
+      "summary": "Performance and regression evidence are linked to the change.",
+      "status": "passed",
+      "owner": "Quality Engineering",
+      "createdAt": "2026-09-24T14:00:00Z",
+      "updatedAt": "2026-09-24T14:00:00Z",
+      "attributes": { "performanceRun": "PERF-8421", "regressionRun": "QA-284" }
+    },
+    {
+      "id": "readiness-operations-alert",
+      "type": "ReadinessGate",
+      "title": "Alert threshold reviewed",
+      "summary": "A human review of the checkout latency alert threshold is still required.",
+      "status": "in_progress",
+      "owner": "Service Owner",
+      "createdAt": "2026-09-23T12:00:00Z",
+      "updatedAt": "2026-09-25T12:00:00Z",
+      "attributes": { "category": "operations", "humanDecisionRequired": true }
+    },
+    {
+      "id": "release-280",
+      "type": "Release",
+      "title": "Checkout release v2.8.0",
+      "summary": "Planned release; readiness remains open pending human review.",
+      "status": "planned",
+      "owner": "Release Manager",
+      "createdAt": "2026-09-25T09:00:00Z",
+      "updatedAt": "2026-09-25T09:00:00Z",
+      "attributes": { "targetDate": "2026-09-30", "environment": "production" }
+    },
+    {
+      "id": "rally-work-us-88314",
+      "type": "RallyWorkItem",
+      "title": "Optimize checkout summary query",
+      "summary": "Illustrative work-tracking projection; there is no live Rally connection.",
+      "status": "in_progress",
+      "owner": "Checkout Team",
+      "createdAt": "2026-09-20T09:00:00Z",
+      "updatedAt": "2026-09-24T13:00:00Z",
+      "attributes": { "provider": "Rally", "cardKey": "US-88314", "projectionOnly": true }
+    }
+  ],
+  "relationships": [
+    { "id": "rel-1", "type": "originates_from", "from": "requirement-checkout-p95", "to": "business-change-latency", "createdAt": "2026-09-19T10:00:00Z", "validFrom": null, "validUntil": null, "evidenceIds": ["evidence-requirement-source"] },
+    { "id": "rel-2", "type": "implements", "from": "engineering-change-284", "to": "requirement-checkout-p95", "createdAt": "2026-09-19T11:00:00Z", "validFrom": null, "validUntil": null, "evidenceIds": [] },
+    { "id": "rel-3", "type": "affects", "from": "engineering-change-284", "to": "component-checkout-api", "createdAt": "2026-09-19T12:00:00Z", "validFrom": null, "validUntil": null, "evidenceIds": [] },
+    { "id": "rel-4", "type": "implemented_by", "from": "engineering-change-284", "to": "implementation-intent-query-index", "createdAt": "2026-09-20T09:00:00Z", "validFrom": null, "validUntil": null, "evidenceIds": [] },
+    { "id": "rel-5", "type": "verified_by", "from": "engineering-change-284", "to": "verification-checkout-performance", "createdAt": "2026-09-24T14:00:00Z", "validFrom": null, "validUntil": null, "evidenceIds": ["evidence-performance-run", "evidence-regression-run"] },
+    { "id": "rel-6", "type": "gates", "from": "engineering-change-284", "to": "readiness-operations-alert", "createdAt": "2026-09-25T12:00:00Z", "validFrom": null, "validUntil": null, "evidenceIds": [] },
+    { "id": "rel-7", "type": "included_in_release", "from": "engineering-change-284", "to": "release-280", "createdAt": "2026-09-25T09:00:00Z", "validFrom": null, "validUntil": null, "evidenceIds": [] },
+    { "id": "rel-8", "type": "tracked_as", "from": "engineering-change-284", "to": "rally-work-us-88314", "createdAt": "2026-09-20T09:00:00Z", "validFrom": null, "validUntil": null, "evidenceIds": [] }
+  ],
+  "evidence": [
+    {
+      "id": "evidence-requirement-source",
+      "assertion": "The product change requests checkout completion performance improvement.",
+      "source": { "name": "Product brief BR-2026-18", "kind": "document", "uri": "https://example.invalid/briefs/BR-2026-18", "revision": "rev-2" },
+      "capturedAt": "2026-09-18T09:00:00Z",
+      "validity": { "state": "known", "validFrom": "2026-09-18T09:00:00Z", "validUntil": null },
+      "status": "current",
+      "confidence": "high",
+      "entityIds": ["business-change-latency", "requirement-checkout-p95"]
+    },
+    {
+      "id": "evidence-performance-run",
+      "assertion": "The measured checkout API p95 latency was 472 ms against a 500 ms target.",
+      "source": { "name": "Performance run PERF-8421", "kind": "test_run", "uri": "https://example.invalid/runs/PERF-8421", "revision": "build-8421" },
+      "capturedAt": "2026-09-24T14:00:00Z",
+      "validity": { "state": "known", "validFrom": "2026-09-24T14:00:00Z", "validUntil": null },
+      "status": "current",
+      "confidence": "high",
+      "entityIds": ["engineering-change-284", "verification-checkout-performance"]
+    },
+    {
+      "id": "evidence-regression-run",
+      "assertion": "The checkout regression suite passed for the change build.",
+      "source": { "name": "Regression run QA-284", "kind": "test_run", "uri": "https://example.invalid/runs/QA-284", "revision": "build-8421" },
+      "capturedAt": "2026-09-24T15:00:00Z",
+      "validity": { "state": "known", "validFrom": "2026-09-24T15:00:00Z", "validUntil": null },
+      "status": "current",
+      "confidence": "high",
+      "entityIds": ["engineering-change-284", "verification-checkout-performance"]
+    },
+    {
+      "id": "evidence-legacy-client-note",
+      "assertion": "Legacy client behavior may depend on the existing checkout response shape and has not recently been revalidated.",
+      "source": { "name": "Architecture note checkout-v1", "kind": "document", "uri": "https://example.invalid/architecture/checkout-v1", "revision": "2025-03" },
+      "capturedAt": "2025-03-12T10:00:00Z",
+      "validity": { "state": "unknown", "validFrom": null, "validUntil": null },
+      "status": "stale",
+      "confidence": "medium",
+      "entityIds": ["engineering-change-284", "component-checkout-api"]
+    }
+  ]
+}
+

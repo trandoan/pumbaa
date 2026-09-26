@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/context-graph/relationship.schema.json",
+  "title": "Context Graph Relationship",
+  "type": "object",
+  "required": ["id", "type", "from", "to", "createdAt"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "type": {
+      "type": "string",
+      "enum": ["originates_from", "refines", "implements", "affects", "depends_on", "decided_by", "designed_for", "implemented_by", "verified_by", "supported_by", "supersedes", "validates", "gates", "included_in_release", "deployed_as", "observed_in", "caused_follow_up", "tracked_as", "resumes_from"]
+    },
+    "from": { "type": "string", "minLength": 1 },
+    "to": { "type": "string", "minLength": 1 },
+    "createdAt": { "type": "string", "format": "date-time" },
+    "validFrom": { "type": ["string", "null"], "format": "date-time" },
+    "validUntil": { "type": ["string", "null"], "format": "date-time" },
+    "evidenceIds": { "type": "array", "items": { "type": "string" }, "uniqueItems": true }
+  },
+  "additionalProperties": false
+}
+

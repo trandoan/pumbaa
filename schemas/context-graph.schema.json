@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/context-graph/context-graph.schema.json",
+  "title": "Context Graph Snapshot",
+  "type": "object",
+  "required": ["schemaVersion", "graphId", "generatedAt", "entities", "relationships"],
+  "properties": {
+    "schemaVersion": { "type": "string", "const": "0.1" },
+    "graphId": { "type": "string", "minLength": 1 },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "entities": { "type": "array", "items": { "$ref": "entity.schema.json" } },
+    "relationships": { "type": "array", "items": { "$ref": "relationship.schema.json" } },
+    "evidence": { "type": "array", "items": { "$ref": "evidence.schema.json" } }
+  },
+  "additionalProperties": false
+}
+

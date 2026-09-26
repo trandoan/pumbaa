@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/context-graph/evidence.schema.json",
+  "title": "Context Graph Evidence",
+  "description": "Source-backed evidence with provenance and temporal validity.",
+  "type": "object",
+  "required": ["id", "assertion", "source", "capturedAt", "validity", "status", "confidence", "entityIds"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "assertion": { "type": "string", "minLength": 1 },
+    "source": {
+      "type": "object",
+      "required": ["name", "kind"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "kind": { "type": "string", "enum": ["document", "repository", "test_run", "scan", "monitoring", "human_attestation", "external_record", "other"] },
+        "uri": { "type": ["string", "null"] },
+        "revision": { "type": ["string", "null"] }
+      },
+      "additionalProperties": false
+    },
+    "capturedAt": { "type": "string", "format": "date-time" },
+    "validity": {
+      "type": "object",
+      "required": ["state"],
+      "properties": {
+        "state": { "type": "string", "enum": ["known", "unknown"] },
+        "validFrom": { "type": ["string", "null"], "format": "date-time" },
+        "validUntil": { "type": ["string", "null"], "format": "date-time" }
+      },
+      "additionalProperties": false
+    },
+    "status": { "type": "string", "enum": ["current", "stale", "superseded", "disputed", "unverified"] },
+    "confidence": { "type": "string", "enum": ["high", "medium", "low", "unknown"] },
+    "entityIds": { "type": "array", "items": { "type": "string" }, "minItems": 1, "uniqueItems": true },
+    "supersedesEvidenceId": { "type": ["string", "null"] }
+  },
+  "additionalProperties": false
+}
+

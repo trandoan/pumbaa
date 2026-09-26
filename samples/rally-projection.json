@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "0.1",
+  "projectionName": "Checkout change work projection",
+  "sourceOfEngineeringContext": "Context Graph",
+  "externalSystem": "Rally",
+  "connected": false,
+  "items": [
+    { "cardKey": "US-88314", "title": "Optimize checkout summary query", "category": "engineering", "state": "in_progress", "graphEntityIds": ["engineering-change-284", "implementation-intent-query-index"], "completed": false },
+    { "cardKey": "US-88321", "title": "Review checkout release gates", "category": "release", "state": "to_do", "graphEntityIds": ["engineering-change-284", "release-280", "readiness-operations-alert"], "completed": false },
+    { "cardKey": "US-88291", "title": "Prepare checkout dashboard", "category": "operations", "state": "done", "graphEntityIds": ["engineering-change-271"], "completed": true }
+  ],
+  "followUpRule": "Create a new linked work item for follow-up work. Do not reopen a completed Rally card."
+}
+
