@@ -2,6 +2,7 @@
 
 This directory splits the numbered baseline sections into one Markdown file per section, following the existing English documentation convention in `docs/POC-SPEC.md`.
 
+- [00. Executive Summary](./00-executive-summary.md)
 - [01. Problem](./01-problem.md)
 - [02. Architecture Baseline](./02-architecture-baseline.md)
 - [03. Three Entry Points](./03-three-entry-points.md)
