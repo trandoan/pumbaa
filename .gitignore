@@ -1,0 +1,33 @@
+# Local IDE and editor state
+*.code-workspace
+.vs/
+.idea/workspace.xml
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+!.env.sample
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor temporary files
+*.swp
+*.swo
+*~
+
+# Common generated dependencies and build output
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+bin/
+obj/
